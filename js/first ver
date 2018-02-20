@@ -1,0 +1,21 @@
+for(var i=0;i<map.length;i++){
+            for(var j=0;j<map[0].length;j++){
+
+                console.log(map[i][j] + ": на месте " + "[" + i + "]"+ "[" + j + "]");
+
+                if(map[i][j] === ISLAND){
+                    oneAmoint++;
+                    islandsAmount++;
+                    if( (map[i][j+1] === ISLAND)
+                        || ( (i<map.length-1) && (map[i+1][j] === ISLAND))
+                        //|| ( (i>0) && (map[i-1][j] === ISLAND) && ((map[i+1][j] !== ISLAND) || (map[i][j+1] !== ISLAND)) )
+                      ){ //|| ((i>1) && (map[i-1][j] === ISLAND))
+
+                        //map[i][j] = WATER;
+                        islandsAmount--;
+                    }
+                }
+
+            }
+            console.log('\n');
+        }
